@@ -50,6 +50,9 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   POST /api/createTask
 ```
 
+- Provide description,status of the task in json format.
+- Status is optional. If not passed, default value of pending is assigned.
+
 | Parameter     | Type     | Description                            |
 | :------------ | :------- | :------------------------------------- |
 | `description` | `string` | **Required**. task description         |
@@ -63,8 +66,8 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   GET /api/getTask
 ```
 
-- status can be passed as query to fetch tasks of certain status
-- if status is not passed, then all the tasks will be retrieved
+- Status can be passed as query to fetch tasks based on status.
+- If status is not passed, then all the tasks will be retrieved.
 
 | Parameter | Type     | Description                            |
 | :-------- | :------- | :------------------------------------- |
@@ -78,17 +81,17 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   PUT /api/updateTask
 ```
 
-- provide the id of the task as query
+- Provide the id of the task as query.
 
 | Query | Type     | Description          |
 | :---- | :------- | :------------------- |
-| `id`  | `string` | **required** Task Id |
+| `id`  | `string` | **Required** Task Id |
 
-- provide all the updated fields in the form of json.
+- Provide all the updated fields in the form of json.
 
 | Parameter     | Type     | Description                            |
 | :------------ | :------- | :------------------------------------- |
-| `description` | `string` | **Required**. task description         |
+| `description` | `string` | **Required** task description          |
 | `status`      | `string` | any 1 of (`pending`,`progress`,`done`) |
 
 ![Screenshot of update task API ](./screenshots/updateTaskAPI.png)
@@ -99,11 +102,11 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   PUT /api/updateTask
 ```
 
-- provide the id and new status of the task as query
+- Provide the id and new status of the task as query.
 
 | Query    | Type     | Description                            |
 | :------- | :------- | :------------------------------------- |
-| `id`     | `string` | **required** Task Id                   |
+| `id`     | `string` | **Required** Task Id                   |
 | `status` | `string` | any 1 of (`pending`,`progress`,`done`) |
 
 ![Screenshot of update status API ](./screenshots/updateStatusAPI.png)
@@ -114,11 +117,11 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   DELETE /api/deleteTask
 ```
 
-- provide the id of the task as query
+- Provide the id of the task as query.
 
 | Query | Type     | Description          |
 | :---- | :------- | :------------------- |
-| `id`  | `string` | **required** Task Id |
+| `id`  | `string` | **Required** Task Id |
 
 ![Screenshot of Delete task API ](./screenshots/deleteTaskAPI.png)
 
@@ -136,7 +139,7 @@ After successfully cloning my GitHub Repo, type the below command in integrated 
   npm install supertest
 ```
 
-- update the `package.json` file
+- Update the `package.json` file
 - runInBand is an additional command used to run tests parallely.
 
 ```
